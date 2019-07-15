@@ -67,7 +67,7 @@ Shader "UnityShaderBook/Chapter7/NormalMapInTangentSpace"
 			fixed4 frag(v2f i) : SV_Target //fixed4 因為片元著色器算出片元的顏色
 			{
 				fixed3 tangentLightDir = normalize(i.ligthDir); // 用於計算漫反射，漫反射需要 l(指向光源方向)
-				fixed3 tangentViewDir = normalize(i.viewDir); // 用於計算高光反射,高光反射需要 r(指向反射方向) 跟 **v** (指向視角方向)
+				fixed3 tangentViewDir = normalize(i.viewDir); // 用於計算高光反射，高光反射需要 r(指向反射方向) 跟 **v** (指向視角方向)
 				
 				// 計算漫反射跟高光反射都會用到 Normal
 				fixed4 packedNormal = tex2D(_BumpMap, i.uv.zw);
